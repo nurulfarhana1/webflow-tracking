@@ -1,4 +1,4 @@
-console.log("Tracking Page");
+console.log("Tracking Page Webflow");
 $("#tracking_result_section").css("display", "none");
 $("#tracking_submit_btn").click(function (event) {
   hide_Tracking_Result_Section();
