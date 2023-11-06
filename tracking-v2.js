@@ -215,6 +215,7 @@ function tracking_data_mapping2_sfstandard(data) {
 }
 function tracking_data_mapping2_flash(data) {
   var city = data["flash"];
+  console.log(city)
   let ra = city.data.routes ? city.data.routes[0].routedAt : "";
   var date = ra ? new Date(ra * 1000) : new Date();
   $("#tracking_status").text("Pending Pickupp");
