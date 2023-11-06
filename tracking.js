@@ -223,8 +223,8 @@ function tracking_data_mapping2_flash(data) {
   );
 }
 function tracking_data_mapping2_lineclear(data) {
-  var city = data["lineclear"][0][0];
-  var dateParts = city.LastModifiedOn.split(" ")[0].split("/");
+  var city = data["lineclear"];
+  var dateParts = city.LastModifiedOn.split(" ").split("/");
   var date = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
   $("#tracking_status").text(city?.Status || "Pending Pickup");
   $("#tracking_lastupdate").text(
