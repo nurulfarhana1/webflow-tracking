@@ -224,6 +224,7 @@ function tracking_data_mapping2_flash(data) {
 }
 function tracking_data_mapping2_lineclear(data) {
   var city = data["lineclear"];
+  console.log("HERE")
   var date = new Date(city.LastModifiedOn);
   console.log(date)
   // var date = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
