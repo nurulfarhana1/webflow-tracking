@@ -217,8 +217,9 @@ function tracking_data_mapping2_sfstandard(data) {
 function tracking_data_mapping2_flash(data) {
   var city = data["flash"];
   let ra = city.data.routes ? city.data.routes[0].routedAt : "";
+  let status = data["status"]
   var date = ra ? new Date(ra * 1000) : new Date();
-  $("#tracking_status").text(city.data.stateText ? city.data.stateText : "Pending Pickup");
+  $("#tracking_status").text(status === "Cancelled by User" ? status : (city.data.stateText ? city.data.stateText : "Pending Pickup"));
   $("#tracking_lastupdate").text(
     date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
   );
