@@ -11,7 +11,7 @@ $("#tracking_submit_btn").click(function (event) {
 });
 function checkTrackingNoAPI(tracking_no) {
   var request = new XMLHttpRequest();
-  request.open("POST", "https://api.parceldaily.com/v1/partner/track/");
+  request.open("POST", "http://localhost:1337/v1/partner/track/");
   request.setRequestHeader("Content-Type", "application/json");
   request.setRequestHeader("Accept", "application/json");
   request.setRequestHeader("token", "950af98c-f033-4cdd-ae8a-82db543a3efe");
@@ -217,7 +217,7 @@ function tracking_data_mapping2_flash(data) {
   var city = data["flash"];
   let ra = city.data.routes ? city.data.routes[0].routedAt : "";
   var date = ra ? new Date(ra * 1000) : new Date();
-  $("#tracking_status").text("Pending Pickupp");
+  $("#tracking_status").text(city.data.stateText ? city.data.stateText : "Pending Pickup");
   $("#tracking_lastupdate").text(
     date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
   );
