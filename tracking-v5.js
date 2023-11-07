@@ -167,7 +167,7 @@ function tracking_data_mapping2_jnt(data) {
   var city = data["jnt"]["data"][0]["details"];
   var status = data[status]
   var citydet = city[Object.keys(city)[0]];
-  $("#tracking_status").text(citydet?.scanstatus || status);
+  $("#tracking_status").text(status === "Cancelled by User" ? status : citydet?.scanstatus);
   $("#tracking_lastupdate").text(citydet?.acceptTime || new Date());
 }
 function tracking_data_mapping2_citylink(data) {
