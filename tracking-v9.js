@@ -11,7 +11,7 @@ $("#tracking_submit_btn").click(function (event) {
 });
 function checkTrackingNoAPI(tracking_no) {
   var request = new XMLHttpRequest();
-  request.open("POST", 'https://api.parceldaily.com/v1/partner/track/');
+  request.open("POST", 'https://api.parceldaily.com/track/');
   request.setRequestHeader("Content-Type", "application/json");
   request.setRequestHeader("Accept", "application/json");
   request.setRequestHeader("token", "950af98c-f033-4cdd-ae8a-82db543a3efe");
